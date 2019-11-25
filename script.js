@@ -6,3 +6,5 @@
 
 //search history of cities appear below search bar
 
+let userInput = #cityInput;
+
