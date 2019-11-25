@@ -6,5 +6,8 @@
 
 //search history of cities appear below search bar
 
-let userInput = #cityInput;
+const searchCity = document.getElementById("searchCity");
+const cityInput = document.getElementById("cityInput");
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}
 
