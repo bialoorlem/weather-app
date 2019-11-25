@@ -1,3 +1,5 @@
+
+
 //User inputs information to search for city weather
 
 //weather info pops up on jumbotron
@@ -13,11 +15,25 @@ function findWeather(){
 
     searchCity.addEventListener("click", function(){
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput.value + "&appid=52ea047875fb2135ea949a32ca9139be";
+        event.preventDefault();
+        
+        console.log(queryURL);
+
+       axios.get(queryURL)
+       .then(function(response){
+
+
+        console.log(queryURL);
+        console.log(response);
+
+       })
+
+        
         
 
     })
 
 }
-
+findWeather()
 
 
