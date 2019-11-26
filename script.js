@@ -11,9 +11,15 @@
 const searchCity = document.getElementById("searchCity");
 const cityInput = document.getElementById("cityInput");
 
+//taken from https://sceendy.com/blog/2017/09-27-weather-widget-tutorial/ 
+
+// const CURRENT_LOCATION = document.getElementsByClassName('weather-content__overview')[0];
+// const CURRENT_TEMP = document.getElementsByClassName('weather-content__temp')[0];
+// const FORECAST = document.getElementsByClassName('component__forecast-box')[0];
+
 function findWeather(){
 
-    searchCity.addEventListener("click", function(){
+    searchCity.addEventListener("click", function(event){
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput.value + "&appid=52ea047875fb2135ea949a32ca9139be";
         event.preventDefault();
         
@@ -44,11 +50,7 @@ function findWeather(){
 
     });
 
-}
-findWeather()
-
-
-function fiveDayForecast(){
+    function fiveDayForecast(){
 
     searchCity.addEventListener("click", function(){
 
@@ -63,6 +65,11 @@ function fiveDayForecast(){
             console.log(fiveDay);
             console.log(response);
 
+        // document.querySelector(".city").innerHTML = "Weather Details: " + response.data.name;
+        // document.querySelector(".wind").innerHTML = "Wind Speed: " + response.data.wind.speed;
+        // document.querySelector(".humidity").innerHTML = "Humidity: " + response.data.main.humidity;
+        // document.querySelector(".temp").innerHTML = "Temperature (F) " + response.data.main.temp;
+
 
 
         })
@@ -70,5 +77,11 @@ function fiveDayForecast(){
     })
 
 }
+
+}
+findWeather()
+
+
+
 
 
