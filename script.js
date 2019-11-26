@@ -20,7 +20,7 @@ const cityInput = document.getElementById("cityInput");
 function findWeather(){
 
     searchCity.addEventListener("click", function(event){
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput.value + "&appid=52ea047875fb2135ea949a32ca9139be";
+        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput.value + "&units=imperial&appid=52ea047875fb2135ea949a32ca9139be";
         event.preventDefault();
         
         console.log(queryURL);
