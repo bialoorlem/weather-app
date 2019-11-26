@@ -80,7 +80,7 @@ function findWeather(){
 
     searchCity.addEventListener("click", function(event){
 
-        let fiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput.value + "&appid=0eb7a574ca817a0762b55aa593d91036";
+        let fiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput.value + "&units=imperial&appid=0eb7a574ca817a0762b55aa593d91036";
         event.preventDefault();
 
 
@@ -102,18 +102,20 @@ for(let i=0; i < 5; i++){
                 const stringTime = timeUNIX.toString();
                 const dateFormatted = moment(stringTime, "X").format("MM/DD/YYYY")
                 const timeFormatted = moment(stringTime, "X").format("HH:mm")
-                if(timeFormatted === "12:00"){
-                    const dayWeather = {
-                        date: dateFormatted,
-                        time: timeFormatted,
-                        weatherDescription: response.data.list[i*8].weather[0].description,
-                        weatherIcon: response.data.list[i*8].weather[0].icon,
-                        temp: response.data.list[i*8].main.temp,
-                        humidity: response.data.list[i*8].main.humidity
-                    }
-                    console.log("Day Weather: ", i, dayWeather)
-                    fiveDayWeather.push(dayWeather);
-                }
+                const dayWeather = response.data.list[i*8].main.temp;
+                const humidity = response.data.list[i*8].main.humidity;
+                // if(timeFormatted === "12:00"){
+                //     const dayWeather = {
+                //         date: dateFormatted,
+                //         time: timeFormatted,
+                //         weatherDescription: response.data.list[i*8].weather[0].description,
+                //         weatherIcon: response.data.list[i*8].weather[0].icon,
+                //         temp: response.data.list[i*8].main.temp,
+                //         humidity: response.data.list[i*8].main.humidity
+                //     }
+                //     console.log("Day Weather: ", i, dayWeather)
+                //     fiveDayWeather.push(dayWeather);
+                // }
                 let forecastrow = document.getElementById("forecast");
                 let newDiv = document.createElement("div");
                 newDiv.setAttribute("class", "col-2");
@@ -121,7 +123,14 @@ for(let i=0; i < 5; i++){
                 let newP = document.createElement("p");
                 newP.textContent = dateFormatted;
                 newDiv.append(newP);
+                let newTemp = document.createElement("p");
+                newTemp.textContent = dayWeather;
+                newDiv.append(newTemp);
+                let newHumid = document.createElement("p");
+                newHumid.textContent = humidity;
+                newDiv.append(newHumid);
             }
+            
 
             console.log(fiveDay);
             console.log(response);
