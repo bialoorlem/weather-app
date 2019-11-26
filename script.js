@@ -17,6 +17,11 @@ const cityInput = document.getElementById("cityInput");
 // const CURRENT_TEMP = document.getElementsByClassName('weather-content__temp')[0];
 // const FORECAST = document.getElementsByClassName('component__forecast-box')[0];
 
+ $("#searchBtn").on("click", function(event){
+        event.target.preventDefault;
+        localStorage.setItem("city", city)
+        localStorage.getItem("user")  
+
 function findWeather(){
 
     searchCity.addEventListener("click", function(event){
@@ -52,7 +57,7 @@ function findWeather(){
 
     function fiveDayForecast(){
 
-    searchCity.addEventListener("click", function(){
+    searchCity.addEventListener("click", function(event){
 
         let fiveDay = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityInput.value + "&appid=0eb7a574ca817a0762b55aa593d91036";
         event.preventDefault();
