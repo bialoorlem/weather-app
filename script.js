@@ -26,6 +26,8 @@ function findWeather(){
         console.log(queryURL);
         console.log(response);
 
+        //Copied from previous activity
+
         document.querySelector(".city").innerHTML = "<h1>" + response.data.name + " Weather Details</h1>";
         document.querySelector(".wind").innerHTML = "Wind Speed: " + response.data.wind.speed;
         document.querySelector(".humidity").innerHTML = "Humidity: " + response.data.main.humidity;
