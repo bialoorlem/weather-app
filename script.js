@@ -17,10 +17,18 @@ const cityInput = document.getElementById("cityInput");
 // const CURRENT_TEMP = document.getElementsByClassName('weather-content__temp')[0];
 // const FORECAST = document.getElementsByClassName('component__forecast-box')[0];
 
- $("#searchBtn").on("click", function(event){
-        event.target.preventDefault;
-        localStorage.setItem("city", city)
-        localStorage.getItem("user")  
+//  $("#searchBtn").on("click", function(event){
+//         event.target.preventDefault;
+//         localStorage.setItem("city", city)
+//         localStorage.getItem("user")  
+
+
+function saveHistory(){
+
+    
+
+}
+
 
 function findWeather(){
 
@@ -85,8 +93,3 @@ function findWeather(){
 
 }
 findWeather()
-
-
-
-
-
