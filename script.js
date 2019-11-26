@@ -28,7 +28,7 @@ function findWeather(){
 
         //Copied from previous activity
 
-        document.querySelector(".city").innerHTML = "<h1>" + response.data.name + " Weather Details</h1>";
+        document.querySelector(".city").innerHTML = "Weather Details: " + response.data.name;
         document.querySelector(".wind").innerHTML = "Wind Speed: " + response.data.wind.speed;
         document.querySelector(".humidity").innerHTML = "Humidity: " + response.data.main.humidity;
         document.querySelector(".temp").innerHTML = "Temperature (F) " + response.data.main.temp;
@@ -48,4 +48,27 @@ function findWeather(){
 findWeather()
 
 
-"https://api.openweathermap.org/data/2.5/forecast?id={city ID}"
+function fiveDayForecast(){
+
+    searchCity.addEventListener("click", function(){
+
+        let fiveDay = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityInput.value + "&appid=0eb7a574ca817a0762b55aa593d91036";
+        event.preventDefault();
+
+        console.log(fiveDay);
+
+        axios.get(fiveDay)
+        .then(function(response){
+
+            console.log(fiveDay);
+            console.log(response);
+
+
+
+        })
+
+    })
+
+}
+
+
