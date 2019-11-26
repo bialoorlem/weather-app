@@ -95,8 +95,10 @@ function findWeather(){
 let fiveDayWeather = [];
 
 
-for(let i=0; i < response.data.list.length; i++){
-                const timeUNIX = response.data.list[i].dt;
+for(let i=0; i < 5; i++){
+    console.log(response)
+                const timeUNIX = response.data.list[i*8].dt;
+                console.log(response.data.list[i*8]);
                 const stringTime = timeUNIX.toString();
                 const dateFormatted = moment(stringTime, "X").format("MM/DD/YYYY")
                 const timeFormatted = moment(stringTime, "X").format("HH:mm")
@@ -104,14 +106,21 @@ for(let i=0; i < response.data.list.length; i++){
                     const dayWeather = {
                         date: dateFormatted,
                         time: timeFormatted,
-                        weatherDescription: response.data.list[i].weather[0].description,
-                        weatherIcon: response.data.list[i].weather[0].icon,
-                        temp: response.data.list[i].main.temp,
-                        humidity: response.data.list[i].main.humidity
+                        weatherDescription: response.data.list[i*8].weather[0].description,
+                        weatherIcon: response.data.list[i*8].weather[0].icon,
+                        temp: response.data.list[i*8].main.temp,
+                        humidity: response.data.list[i*8].main.humidity
                     }
                     console.log("Day Weather: ", i, dayWeather)
                     fiveDayWeather.push(dayWeather);
                 }
+                let forecastrow = document.getElementById("forecast");
+                let newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "col-2");
+                forecastrow.append(newDiv);
+                let newP = document.createElement("p");
+                newP.textContent = dateFormatted;
+                newDiv.append(newP);
             }
 
             console.log(fiveDay);
@@ -126,6 +135,8 @@ for(let i=0; i < response.data.list.length; i++){
 console.log(document.querySelector(".dayOne"));
 
         })
+
+        
 
     })
 
