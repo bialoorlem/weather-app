@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,9 +26,18 @@
       <div class="col">
         <nav class="navbar navbar-light bg-light">
           <form class="form-inline">
-            <p class="searchBar">Search City</p>
+            <h2>Search City</h2>
+          </form>
+        </nav>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-light bg-light">
+          <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="City Name" aria-label="Search" id="cityInput">
-            <button value="0" id="searchCity" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button value="0" id="searchCity" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
           </form>
         </nav>
       </div>
@@ -56,21 +66,7 @@
 
     <div class="row" id="forecast">
 
-<!--Five Day Forecast taken from https://sceendy.com/blog/2017/09-27-weather-widget-tutorial/ -->
-<!--
-      <div class="component__weather-box">
-        <div class="component__weather-content">
-          <div class="weather-content__overview"></div>
-          <div class="weather-content__temp"></div>
-        </div>
-        <div class="component__forecast-box"></div>
-      </div>-->
 
-      <!--<div class="dayOne"></div>
-      <div class="dayTwo"></div>
-      <div class="dayThree"></div>
-      <div class="dayFour"></div>
-      <div class="dayFive"></div>-->
 
     </div>
     <script src="https://unpkg.com/moment"></script>

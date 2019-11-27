@@ -26,35 +26,48 @@ const cityInput = document.getElementById("cityInput");
 
 
 
-// function saveHistory(){
+function saveHistory(){
 
-//   document.querySelectorAll(".btn").forEach(function(save){
-//     save.addEventListener("click", function(){
-//       let inputVal = save.getAttribute("value");
+  document.querySelectorAll("searchCity").forEach(function(save){
+    save.addEventListener("click", function(){
+      let inputVal = save.getAttribute("value");
 
-//       console.log(inputVal);
-//     saveInput(inputVal);  
+      console.log(inputVal);
+    saveInput(inputVal);  
 
-//     })
-//   )}
-// }
-
-
-function pullInput(){
-
-  for(i = 0 ; i < 9 ; i ++){
-    let searchHistory = "cityInput" + i;
-    console.log(searchHistory);
-    if(storageData.getItem(searchHistory) === null)
-    {
-      continue;
-    }
-    else{
-    inputs[i].innerHTML = storageData.getItem(searchHistory);
-    }
-  }
-
+    })
+  })
 }
+
+// function pullInput(){
+
+// searchCity.addEventListener("click", function(event) {
+//     event.preventDefault();
+//     searchCity = document.getElementById("cityInput").value.trim();
+//     let dataStr = localStorage.getItem("cityInput") || "[]";
+//     // console.log(dataStr.length)
+//     let data = JSON.parse(dataStr);
+//     // console.log(data)
+//     data.push(searchCity);
+//     localStorage.setItem("cityInput", JSON.stringify(data));
+
+// });
+
+// function pullInput(){
+
+//   for(i = 0 ; i < 9 ; i ++){
+//     let searchHistory = "cityInput" + i;
+//     console.log(searchHistory);
+//     if(storageData.getItem(searchHistory) === null)
+//     {
+//       continue;
+//     }
+//     else{
+//     inputs[i].innerHTML = storageData.getItem(searchHistory);
+//     }
+//   }
+
+// }
 
 function findWeather(){
 
