@@ -7,5 +7,5 @@ This app will be used for anyone checking the weather all over the world. Whethe
 
 Screenshots
 
-https://raw.githubusercontent.com/bialoorlem/weather-app/assets/screenshots/screenshot1.png
-https://raw.githubusercontent.com/bialoorlem/weather-app/assets/screenshots/screenshot2.png
+https://raw.githubusercontent.com/bialoorlem/weather-app/master-branch/assets/screenshots/screenshot1.png
+https://raw.githubusercontent.com/bialoorlem/weather-app/master-branch/assets/screenshots/screenshot2.png
