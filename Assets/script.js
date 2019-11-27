@@ -13,61 +13,28 @@ storageData = window.localStorage;
 const searchCity = document.getElementById("searchCity");
 const cityInput = document.getElementById("cityInput");
 
-//taken from https://sceendy.com/blog/2017/09-27-weather-widget-tutorial/ 
 
-// const CURRENT_LOCATION = document.getElementsByClassName('weather-content__overview')[0];
-// const CURRENT_TEMP = document.getElementsByClassName('weather-content__temp')[0];
-// const FORECAST = document.getElementsByClassName('component__forecast-box')[0];
+//Meant to save search history, but doesn't work
 
-//  $("#searchCity").on("click", function(event){
-//         event.target.preventDefault;
-//         localStorage.setItem("city", city)
-//         localStorage.getItem("user")  
+function pullInput(){
 
+    let pullCity = document.getElementById("cityInput");
 
+pullCity.addEventListener("click", function(event) {
+    event.preventDefault();
+    pullCity = document.getElementById("cityInput").value
+    const dataStr = localStorage.getItem("cityInput") || "[]";
+    // console.log(dataStr.length)
+    const data = JSON.parse(dataStr);
+    // console.log(data)
+    data.push(response.data.name);
+    localStorage.setItem("cityInput", JSON.stringify(data));
+    console.log(localStorage);
+});
 
-function saveHistory(){
-
-  document.querySelectorAll("searchCity").forEach(function(save){
-    save.addEventListener("click", function(){
-      let inputVal = save.getAttribute("value");
-
-      console.log(inputVal);
-    saveInput(inputVal);  
-
-    })
-  })
 }
+pullInput();
 
-// function pullInput(){
-
-// searchCity.addEventListener("click", function(event) {
-//     event.preventDefault();
-//     searchCity = document.getElementById("cityInput").value.trim();
-//     let dataStr = localStorage.getItem("cityInput") || "[]";
-//     // console.log(dataStr.length)
-//     let data = JSON.parse(dataStr);
-//     // console.log(data)
-//     data.push(searchCity);
-//     localStorage.setItem("cityInput", JSON.stringify(data));
-
-// });
-
-// function pullInput(){
-
-//   for(i = 0 ; i < 9 ; i ++){
-//     let searchHistory = "cityInput" + i;
-//     console.log(searchHistory);
-//     if(storageData.getItem(searchHistory) === null)
-//     {
-//       continue;
-//     }
-//     else{
-//     inputs[i].innerHTML = storageData.getItem(searchHistory);
-//     }
-//   }
-
-// }
 
 function findWeather(){
 
@@ -154,14 +121,13 @@ for(let i=0; i < 5; i++){
             }
             
 
+
+
             console.log(fiveDay);
             console.log(response);
             console.log(fiveDayWeather);
 
-        // document.querySelector(".dayOne").innerHTML = "Temperature (F) " + response.data.main.temp;
-        // document.querySelector(".wind").innerHTML = "Wind Speed: " + response.data.wind.speed;
-        // document.querySelector(".humidity").innerHTML = "Humidity: " + response.data.main.humidity;
-        // document.querySelector(".temp").innerHTML = "Temperature (F) " + response.data.main.temp;
+
 
 console.log(document.querySelector(".dayOne"));
 
