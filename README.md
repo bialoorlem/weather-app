@@ -10,5 +10,5 @@ This app will be used for anyone checking the weather all over the world. Whethe
 Screenshots
 
 https://github.com/bialoorlem/weather-app/master-branch/assets/screenshots/screenshot1.png
-https://github.com/bialoorlem/weather-app/weather-app/master-branch/assets/screenshots/screenshot2.png
+https://github.com/bialoorlem/weather-app/master-branch/assets/screenshots/screenshot2.png
 
