@@ -40,7 +40,21 @@ const cityInput = document.getElementById("cityInput");
 // }
 
 
+function pullInput(){
 
+  for(i = 0 ; i < 9 ; i ++){
+    let searchHistory = "cityInput" + i;
+    console.log(searchHistory);
+    if(storageData.getItem(searchHistory) === null)
+    {
+      continue;
+    }
+    else{
+    inputs[i].innerHTML = storageData.getItem(searchHistory);
+    }
+  }
+
+}
 
 function findWeather(){
 
